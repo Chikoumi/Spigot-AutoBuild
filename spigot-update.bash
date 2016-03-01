@@ -13,6 +13,7 @@ mcrestartcmd="/etc/init.d/minecraft restart"
 mkdir $dir
 cd $dir 
 wget "$buildtoolslink" -O $buildtoolsfile
+git config --global --unset core.autocrlf
 java -jar $buildtoolsfile --rev $mcversion
 cp spigot*.jar $mcfolder/$mcjar
 
