@@ -6,13 +6,14 @@ buildtoolslink="https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBu
 buildtoolsfile="BuildTools.jar"
 mcfolder="/home/minecraft"
 mcjar="server.jar"
+mcversion="latest"
 mcrestartcmd="/etc/init.d/minecraft restart"
 
 #Update
 mkdir $dir
 cd $dir 
 wget "$buildtoolslink" -O $buildtoolsfile
-java -jar $buildtoolsfile
+java -jar $buildtoolsfile --rev $mcversion
 cp spigot*.jar $mcfolder/$mcjar
 
 #Redémarrage du serveur (option)
